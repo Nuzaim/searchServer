@@ -23,6 +23,7 @@ youtubeRouter.route("/")
       const {id, title, thumbnails,viewCount} = item;
       response.push({id,title,thumbnails: thumbnails[0],views: viewCount})
     });
+    response.sort((a, b) => b.views - a.views); //Sort based on views count
     res.json(response);
 })
 
